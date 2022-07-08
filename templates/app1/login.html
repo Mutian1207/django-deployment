@@ -1,0 +1,19 @@
+{%extends "app1/base.html" %}
+{%block body_block%}
+    <h1>
+        please input your username and password!
+    </h1>
+
+    <form action="{%url "app1:login" %}" method = 'POST'>
+        {%csrf_token%}
+        <label for="username">Username:</label>
+        <input type="text" name='username'>
+
+
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+
+        <input type="submit" value = "login!">
+    </form>
+
+{%endblock%}
